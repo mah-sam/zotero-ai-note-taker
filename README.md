@@ -1,11 +1,17 @@
 # Zotero AI Note Taker
 
+<p align="center">
+  <img alt="License" src="https://img.shields.io/github/license/mah-sam/zotero-ai-note-taker?style=for-the-badge">
+  <img alt="Python Version" src="https://img.shields.io/badge/python-3.9+-blue.svg?style=for-the-badge">
+  <img alt="Made with PyQt6" src="https://img.shields.io/badge/Made%20with-PyQt6-green.svg?style=for-the-badge">
+</p>
+
 **A desktop application to automatically generate structured, AI-powered summary notes for research papers in your Zotero library.**
 
 This tool bridges the gap between your PDF library in Zotero and the power of large language models like Google's Gemini. It provides a user-friendly interface to select papers from your Zotero collections, send them to an AI for analysis based on a custom prompt, and save the formatted results back into Zotero as a child note.
 
 <p align="center">
-  <img src="github/top.jpg" width="100%" alt="Settings Dialog">
+  <img src="github/top.jpg" width="100%" alt="Main application window">
 </p>
 
 ## Key Features
@@ -19,6 +25,17 @@ This tool bridges the gap between your PDF library in Zotero and the power of la
 
 ---
 
+## The Result: Formatted Notes in Zotero
+
+The application converts the AI's Markdown output into clean HTML, so your notes appear perfectly formatted inside Zotero, with headings, bullet points, and bold text rendered correctly.
+
+<p align="center">
+  <img src="github/zotero_note_example.png" width="75%" alt="Example of a formatted note inside Zotero">
+  <i>(Example of a final, formatted AI-generated note attached to its parent item in Zotero.)</i>
+</p>
+
+---
+
 ## Screenshots
 
 <p align="center">
@@ -26,7 +43,7 @@ This tool bridges the gap between your PDF library in Zotero and the power of la
   <img src="github/gui.png" width="48%" alt="Context Menu">
 </p>
 <p align="center">
-  <i>(Left: The comprehensive settings dialog. Right: The right-click context menu for full collection summaries.)</i>
+  <i>(Left: The comprehensive settings dialog. Right: The main interface showing the context menu.)</i>
 </p>
 
 ---
@@ -77,9 +94,9 @@ pip install -r requirements.txt
     python note_taker.py
     ```
 
-3.  **Enter Settings:** On the first launch, the application will detect that it hasn't been configured and will automatically open the **Settings** dialog (if it didn't, go to File -> Settings).
+3.  **Enter Settings:** On the first launch, the application will detect that it hasn't been configured and will automatically open the **Settings** dialog. If it doesn't, go to **File -> Settings...**.
     *   Paste your **Zotero Library ID**, **Zotero API Key**, and **Gemini API Key** into the appropriate fields.
-    *   (Optional) Review and edit the Gemini System Prompt to fit your needs. We suggest you to insert a prompt that allows the summarizer to create organized and relevant notes to your main research, not just a general summary.
+    *   Review and edit the Gemini System Prompt to fit your needs. **(See the section below for tips on writing a good prompt.)**
     *   Click **Save**.
 
 4.  **Restart the App:** A restart is required after the initial setup. Close the application and run `python note_taker.py` again. It will now connect successfully to Zotero.
@@ -101,7 +118,51 @@ pip install -r requirements.txt
 1.  **Right-Click a Collection:** In the left-hand pane, right-click on any collection or sub-collection.
 2.  **Select "Get Full Summary":** Choose this option from the context menu.
 3.  **Monitor Progress:** The log will show the application fetching data for all papers in the selected collection and its children.
-4.  **Save the File:** Once complete, a "Save As..." dialog will appear. Choose a location and name for your summary text file. The file will contain the BibLaTeX citation and AI summary for every paper in the collection hierarchy.
+4.  **Save the File:** Once complete, a "Save As..." dialog will appear. Choose a location and name for your summary text file. The file will contain the BibLaTeX citation and the AI summary (if available) for every paper in the collection hierarchy.
+
+---
+
+## Crafting an Effective System Prompt
+
+The quality of your AI-generated notes depends entirely on the quality of your system prompt. A generic prompt will yield generic summaries. A specific, context-aware prompt will produce notes that are directly useful for your own work.
+
+Go to **File -> Settings...** to edit the prompt. Here are some best practices:
+
+### 1. Define the AI's Role and Goal
+Start by telling the AI who it is and what its primary objective is.
+> **Good Example:** "You are an expert Research Assistant. Your task is to analyze the provided research paper and generate structured notes that will be used to write the literature review for my project."
+
+### 2. Provide Your Project's Context (Crucial)
+This is the most important part. The AI needs to understand *your* project to know what information is relevant in the papers it reads. Include:
+- **Your Project Title:** `My Project Title: "A Unified Software Framework for..."`
+- **Your Core Objective:** What problem are you solving?
+- **Key Features of Your Project:** What makes your work unique?
+- **The Gap You Fill:** What do existing solutions lack that your project provides?
+
+### 3. Enforce a Strict Output Format
+Tell the AI *exactly* how to structure its response. Using Markdown with clear headings is highly effective. This makes the notes consistent and easy to read.
+> **Good Example:**
+> ```markdown
+> ### 1. Core Contribution of the Paper
+> <!-- What problem did the authors solve? -->
+>
+> ### 2. Methodology & Key Technologies
+> <!-- What hardware and software did they use? -->
+>
+> ### 3. **CRITICAL ANALYSIS & RELEVANCE TO MY PROJECT**
+> <!-- This is the most important section. How does this paper support or contrast with my work? What gap that they have do I solve? -->
+>
+> ### 4. Key Quotes for Citation
+> <!-- Extract 1-3 direct quotes. -->
+> ```
+
+### 4. Ask for Critical Analysis, Not Just a Summary
+Instruct the AI to analyze the paper *through the lens of your project*. Ask specific questions to guide its thinking:
+- "How does this paper **support** my project's approach?"
+- "How is their methodology **different** from mine?"
+- "Does this paper highlight a **gap** that my project successfully addresses?"
+
+By investing time in crafting a detailed prompt, you transform the tool from a simple summarizer into a powerful, personalized research assistant.
 
 ---
 
