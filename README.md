@@ -30,8 +30,10 @@ This tool bridges the gap between your PDF library in Zotero and the power of la
 The application converts the AI's Markdown output into clean HTML, so your notes appear perfectly formatted inside Zotero, with headings, bullet points, and bold text rendered correctly.
 
 <p align="center">
-  <img src="github/zotero_note_example.png" width="75%" alt="Example of a formatted note inside Zotero">
-  <i>(Example of a final, formatted AI-generated note attached to its parent item in Zotero.)</i>
+  <img src="github/zotero.png" width="75%" alt="Example of a formatted note inside Zotero">
+</p>
+<p align="center">
+  <i>(Example of a final, formatted AI-generated noteس attached to items in Zotero.)</i>
 </p>
 
 ---
