@@ -33,7 +33,7 @@ The application converts the AI's Markdown output into clean HTML, so your notes
   <img src="github/zotero.png" width="75%" alt="Example of a formatted note inside Zotero">
 </p>
 <p align="center">
-  <i>(Example of a final, formatted AI-generated noteس attached to items in Zotero.)</i>
+  <i>(Example of a final, formatted AI-generated notes attached to items in Zotero.)</i>
 </p>
 
 ---
