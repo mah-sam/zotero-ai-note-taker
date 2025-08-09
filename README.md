@@ -22,14 +22,12 @@ This tool bridges the gap between your PDF library in Zotero and the power of la
 ## Screenshots
 
 <p align="center">
-  <img src="https://i.imgur.com/your-settings-screenshot.png" width="48%" alt="Settings Dialog">
-  <img src="https://i.imgur.com/your-context-menu-screenshot.png" width="48%" alt="Context Menu">
+  <img src="github/settings.png" width="48%" alt="Settings Dialog">
+  <img src="github/gui.png" width="48%" alt="Context Menu">
 </p>
 <p align="center">
   <i>(Left: The comprehensive settings dialog. Right: The right-click context menu for full collection summaries.)</i>
 </p>
-
-*(Replace with screenshots of your settings dialog and the right-click menu)*
 
 ---
 
