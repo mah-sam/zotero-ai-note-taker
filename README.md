@@ -41,7 +41,7 @@ The application converts the AI's Markdown output into clean HTML, so your notes
 ## Screenshots
 
 <p align="center">
-  <img src="github/settings.png" width="48%" alt="Settings Dialog">
+  <img src="github/settings.png" width="47%" alt="Settings Dialog">
   <img src="github/gui.png" width="48%" alt="Context Menu">
 </p>
 <p align="center">
