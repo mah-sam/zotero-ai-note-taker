@@ -79,9 +79,9 @@ pip install -r requirements.txt
     python note_taker.py
     ```
 
-3.  **Enter Settings:** On the first launch, the application will detect that it hasn't been configured and will automatically open the **Settings** dialog (if it didn't, go to File -> Settings.
+3.  **Enter Settings:** On the first launch, the application will detect that it hasn't been configured and will automatically open the **Settings** dialog (if it didn't, go to File -> Settings).
     *   Paste your **Zotero Library ID**, **Zotero API Key**, and **Gemini API Key** into the appropriate fields.
-    *   (Optional) Review and edit the Gemini System Prompt to fit your needs.
+    *   (Optional) Review and edit the Gemini System Prompt to fit your needs. We suggest you to insert a prompt that allows the summarizer to create organized and relevant notes to your main research, not just a general summary.
     *   Click **Save**.
 
 4.  **Restart the App:** A restart is required after the initial setup. Close the application and run `python note_taker.py` again. It will now connect successfully to Zotero.
