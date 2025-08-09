@@ -4,8 +4,9 @@
 
 This tool bridges the gap between your PDF library in Zotero and the power of large language models like Google's Gemini. It provides a user-friendly interface to select papers from your Zotero collections, send them to an AI for analysis based on a custom prompt, and save the formatted results back into Zotero as a child note.
 
-
-*(Replace with a screenshot of your main application window)*
+<p align="center">
+  <img src="github/top.jpg" width="100%" alt="Settings Dialog">
+</p>
 
 ## Key Features
 
@@ -13,11 +14,8 @@ This tool bridges the gap between your PDF library in Zotero and the power of la
 - **Direct Zotero Integration:** Connects to both the Zotero Web API (for writing notes) and your local Zotero application (for fast, local PDF access).
 - **AI-Powered Summarization:** Leverages Google's Gemini models (`gemini-2.5-pro` and `gemini-2.5-flash`) to analyze your papers.
 - **Fully Customizable Prompt:** Edit the powerful system prompt directly in the app's settings to tailor the AI's output to your specific research project.
-- **Batch Processing:** Select one or multiple papers to generate notes for in a single run.
-- **Smart Status Tracking:** Automatically detects which papers already have an AI summary and which are missing a PDF, disabling them to prevent duplicate work.
 - **Full Collection Summaries:** Right-click any collection to compile a single text document containing the BibLaTeX citation and AI summary for every paper within it (and its sub-collections).
 - **Persistent Settings:** All your API keys, IDs, and the custom prompt are saved locally in a `settings.json` file for convenience.
-- **Safe & Responsive:** All network operations run in background threads, so the user interface never freezes.
 
 ---
 
